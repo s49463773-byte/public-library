@@ -2,8 +2,15 @@ export interface Activity {
   id: number;
   title: string;
   date: string;
+  startTime?: string;
+  endTime?: string;
+  location?: string;
   image: string;
+  images?: string[];
   description: string;
+  category?: string;
+  audience?: string;
+  phone?: string;
 }
 
 export interface Book {

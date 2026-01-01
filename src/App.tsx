@@ -14,6 +14,7 @@ import AddBook from './pages/AddBook';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="videos" element={<Videos />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

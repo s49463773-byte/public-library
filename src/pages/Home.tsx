@@ -65,61 +65,95 @@ const HeroSection = () => {
 const ActivitiesSlider = ({ activities, currentSlide, nextSlide, prevSlide }: any) => {
   const { ref, isVisible } = useScrollAnimation();
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+    return {
+      day: date.getDate(),
+      month: months[date.getMonth()],
+      fullDate: `يوم ${date.getDate()} ${months[date.getMonth()]}`
+    };
+  };
+
   return (
     <div
       ref={ref}
       className={`py-16 bg-gray-50 ${isVisible ? 'animate-on-scroll' : ''}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">آخر النشاطات</h2>
-        <div className="relative">
-          <div className="overflow-hidden rounded-lg">
-            <div
-              className="flex transition-transform duration-500"
-              style={{ transform: `translateX(${currentSlide * -100}%)` }}
-            >
-              {activities.map((activity: any) => (
-                <div key={activity.id} className="min-w-full px-2">
-                  <Link to={`/activities/${activity.id}`}>
-                    <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition duration-300 transform hover:-translate-y-1">
-                      <img
-                        src={activity.image}
-                        alt={activity.title}
-                        className="w-full h-64 object-cover"
-                      />
-                      <div className="p-6">
-                        <p className="text-gray-500 text-sm mb-2">{activity.date}</p>
-                        <h3 className="text-xl font-bold mb-2">{activity.title}</h3>
-                        <p className="text-gray-600 line-clamp-3">{activity.description}</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="flex items-center justify-between mb-8">
           <button
             onClick={prevSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
-          >
-            <ChevronRight size={24} />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+            className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition"
           >
             <ChevronLeft size={24} />
           </button>
+          <h2 className="text-3xl font-bold">آخر الأنشطة</h2>
         </div>
-        <div className="flex justify-center mt-4 gap-2">
-          {activities.map((_: any, index: number) => (
-            <div
-              key={index}
-              className={`h-2 w-2 rounded-full ${
-                index === currentSlide ? 'bg-red-700' : 'bg-gray-300'
-              }`}
-            />
-          ))}
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            {activities.slice(0, 5).map((activity: any) => {
+              const dateInfo = formatDate(activity.date);
+              return (
+                <Link
+                  key={activity.id}
+                  to={`/activities/${activity.id}`}
+                  className="flex gap-4 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition group"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="bg-red-900 text-white rounded-lg px-4 py-3 text-center min-w-[80px]">
+                      <div className="text-sm font-semibold">{dateInfo.month}</div>
+                      <div className="text-3xl font-bold">{dateInfo.day}</div>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold mb-2 group-hover:text-red-700 transition line-clamp-2">
+                      {activity.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-1">
+                      {dateInfo.fullDate} | {activity.startTime && activity.endTime ? `من ${activity.startTime} - إلى ${activity.endTime}` : ''}
+                    </p>
+                    {activity.location && (
+                      <p className="text-gray-500 text-sm">{activity.location}</p>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="relative">
+            <div className="overflow-hidden rounded-lg shadow-2xl">
+              <div
+                className="flex transition-transform duration-500"
+                style={{ transform: `translateX(${currentSlide * -100}%)` }}
+              >
+                {activities.map((activity: any) => (
+                  <div key={activity.id} className="min-w-full">
+                    <Link to={`/activities/${activity.id}`}>
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
+                        className="w-full h-[600px] object-cover"
+                      />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center mt-6 gap-2">
+              {activities.map((_: any, index: number) => (
+                <button
+                  key={index}
+                  onClick={() => {}}
+                  className={`h-3 w-3 rounded-full transition ${
+                    index === currentSlide ? 'bg-red-700' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

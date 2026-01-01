@@ -3,38 +3,110 @@ import { Activity, Book, Space, Device, Facility, RegulationArticle } from '../t
 export const activities: Activity[] = [
   {
     id: 1,
-    title: 'اليوم العالمي للكتاب وحقوق المؤلف 23 أبريل',
-    date: '2025-04-23',
+    title: 'مسابقة قلمي عربي',
+    date: '2025-12-21',
+    startTime: '3 مساءً',
+    endTime: '6 مساءً',
+    location: 'المكتبة الرئيسية بقاعة المحاضرات',
     image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'احتفاء باليوم العالمي للكتاب وحقوق المؤلف، الذي يصادف 23 أبريل من كل سنة، يوم الثلاثاء الموافق له 22 أبريل 2025، نظمت المكتبة الرئيسية للمطالعة العمومية محمد حمودة بن ساعي لولاية باتنة والتنسيق مع شبكة مكتبات باتنة...'
+    images: [
+      'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'احتفاء باليوم العالمي للغة العربية المصادف لـ 18 ديسمبر من كل سنة بالتنسيق مع النادي الثقافي السراج للمكتبة الرئيسية نظمت المكتبة الرئيسية مسابقة قلمي عربي تحت شعار "العربية لغة هوية وإبداع" لإصقال المواهب والحفاظ على الهوية اللغوية الوطنية',
+    category: 'مسابقة',
+    audience: 'الفئة العمرية أقل من 18 سنة',
+    phone: '046.21.52.22'
   },
   {
     id: 2,
-    title: 'ندوة دينية في رحاب العشر الأواخر من رمضان',
-    date: '2025-03-27',
+    title: 'منتدى الكتاب العدد 51 تزامنا مع اليوم العالمي للغة العربية المصادف لـ 18 ديسمبر',
+    date: '2025-12-21',
+    startTime: '3 مساءً',
+    endTime: '6 مساءً',
+    location: 'المكتبة الرئيسية بقاعة المحاضرات',
     image: 'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'في إطار البرنامج الرمضاني للمكتبة والتنسيق مع مديرية الشؤون الدينية والأوقاف لولاية باتنة...'
+    images: [
+      'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'نظمت المكتبة الرئيسية بالتنسيق مع قطاع الثقافة والفنون بمناسبة اليوم العالمي للغة العربية المصادف لـ18 ديسمبر من كل سنة وفي إطار منتدى الكتاب في عدده 51 تحت شعار منتدى الكتاب فضاء مفتوح على الكتاب واعتراف بصناعة جلسة مع كاتب الذي إستضاف#الدكتور_الفاضل الكاتب روفي عبد القادر عميد...',
+    category: 'منتدى الكتاب',
+    audience: 'الجميع',
+    phone: '046.21.52.20'
   },
   {
     id: 3,
-    title: 'اليوم العربي للمكتبات 10 مارس',
-    date: '2025-03-10',
+    title: 'عطلة الشتاء',
+    date: '2025-12-18',
+    startTime: '9 صباحاً',
+    endTime: '4 مساءً',
+    location: 'المكتبة الرئيسية بجناح الطفل',
     image: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'بمناسبة اليوم العربي للمكتبات، نظمت المكتبة الرئيسية للمطالعة العمومية محمد حمودة بن ساعي لولاية باتنة...'
+    images: [
+      'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2853432/pexels-photo-2853432.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'بمناسبة عطلة الشتاء، نظمت المكتبة الرئيسية للمطالعة العمومية محمد حمودة بن ساعي برنامج ثري بالأنشطة والورشات الموجهة للأطفال',
+    category: 'جلسة شعرية',
+    audience: 'الأطفال',
+    phone: '046.21.52.22'
   },
   {
     id: 4,
-    title: 'اليوم الوطني لذوي الاحتياجات الخاصة 14 مارس',
-    date: '2025-03-14',
+    title: 'مسابقة الحكواتي المصغر',
+    date: '2025-12-15',
+    startTime: '9 صباحاً',
+    endTime: '4 مساءً',
+    location: 'المكتبة الرئيسية ومكتباتها',
     image: 'https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'بمناسبة اليوم الوطني لذوي الاحتياجات الخاصة المصادف لـ 14 مارس من كل سنة...'
+    images: [
+      'https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2853432/pexels-photo-2853432.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'في إطار فعاليات عطلة الشتاء، نظمت المكتبة الرئيسية مسابقة الحكواتي المصغر للأطفال',
+    category: 'ثقافي',
+    audience: 'الأطفال',
+    phone: '046.21.52.20'
   },
   {
     id: 5,
-    title: 'سهرة رمضانية مميزة في المكتبة الرئيسية',
-    date: '2025-03-27',
+    title: 'اليوم العالمي للكتاب وحقوق المؤلف 23 أبريل',
+    date: '2025-04-23',
+    startTime: '10 صباحاً',
+    endTime: '5 مساءً',
+    location: 'المكتبة الرئيسية',
     image: 'https://images.pexels.com/photos/2853432/pexels-photo-2853432.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'في أجواء روحانية محضة بالأمداح والإنشاد المنشدة، نظمت المكتبة الرئيسية للمطالعة العمومية محمد حمودة بن ساعي لولاية باتنة...'
+    images: [
+      'https://images.pexels.com/photos/2853432/pexels-photo-2853432.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'احتفاء باليوم العالمي للكتاب وحقوق المؤلف، الذي يصادف 23 أبريل من كل سنة، يوم الثلاثاء الموافق له 22 أبريل 2025، نظمت المكتبة الرئيسية للمطالعة العمومية محمد حمودة بن ساعي لولاية باتنة والتنسيق مع شبكة مكتبات باتنة...',
+    category: 'تكريم',
+    audience: 'الجميع',
+    phone: '033 86 40 60'
+  },
+  {
+    id: 6,
+    title: 'ندوة دينية في رحاب العشر الأواخر من رمضان',
+    date: '2025-03-27',
+    startTime: '8 مساءً',
+    endTime: '10 مساءً',
+    location: 'المكتبة الرئيسية بقاعة المحاضرات',
+    image: 'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800',
+    images: [
+      'https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=800'
+    ],
+    description: 'في إطار البرنامج الرمضاني للمكتبة والتنسيق مع مديرية الشؤون الدينية والأوقاف لولاية باتنة...',
+    category: 'ورشة',
+    audience: 'الجميع',
+    phone: '033 86 40 60'
   }
 ];
 
